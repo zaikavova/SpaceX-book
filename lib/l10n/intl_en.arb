@@ -1,0 +1,38 @@
+{
+  "@@locale": "en",
+  "dragonsChapterTitle": "Dragons",
+  "@dragonsChapterTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "highlightsChapterTitle": "Highlights",
+  "@highlightsChapterTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "highlightsTitle": "Rockets are cool",
+  "@highlightsTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "nothingToShow": "Nothing to show right now, try again",
+  "@nothingToShow": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dragonsTitle": "The Trampoline is Working",
+  "@dragonsTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mainTitle": "SpaceX Book",
+  "@mainTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "somethingWrong": "Something went wrong, try again",
+  "@somethingWrong": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
