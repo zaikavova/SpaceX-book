@@ -6,6 +6,8 @@ Test task application for Arch company that contains an overview of SpaceX event
 
 Code generation runs with next commands, to set up the project you must call them
 
+`flutter packages upgrade`
+
 `flutter packages pub run build_runner build --delete-conflicting-outputs`
 
 `flutter pub run intl_utils:generate`

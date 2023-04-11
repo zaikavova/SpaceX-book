@@ -4,9 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:space_x_book/gen/assets.gen.dart';
 import 'package:space_x_book/generated/l10n.dart';
 import 'package:space_x_book/injection_container.dart';
-import 'package:space_x_book/presentation/dragon_details_page/widget.dart';
 import 'package:space_x_book/presentation/dragons_page/bloc/index.dart';
-import 'package:space_x_book/presentation/widget/card_list_item_widget.dart';
+import 'package:space_x_book/presentation/widget/index.dart';
 import 'package:space_x_book/routing/index.dart';
 
 class DragonsPage extends StatefulWidget {
@@ -19,12 +18,9 @@ class _DragonsPageState extends State<DragonsPage> {
   late final AppRouter _router = sl<AppRouter>();
 
   @override
-  Widget build(BuildContext context) =>
-      Scaffold(
+  Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(S
-              .of(context)
-              .dragonsTitle),
+          title: Text(S.of(context).dragonsTitle),
         ),
         body: BlocConsumer<DragonsBloc, DragonsState>(
           bloc: _bloc,
@@ -45,25 +41,20 @@ class _DragonsPageState extends State<DragonsPage> {
                   itemCount: items.length,
                   itemBuilder: (BuildContext context, int index) =>
                       CardListItemWidget(
-                        title: items[index].name,
-                        image: items[index].photos.isNotEmpty
-                            ? CachedNetworkImageProvider(
-                          state.items?[index].photos.first ?? '',
-                        )
-                            : Image
-                            .asset(Assets.images.spacexLogo.path)
-                            .image,
-                        onTap: () {
-                          _router.navigate(
-                              DragonDetailsRoute(dragon: items[index]));
-                        },
-                      ),
+                    title: items[index].name,
+                    image: items[index].photos.isNotEmpty
+                        ? CachedNetworkImageProvider(
+                            state.items?[index].photos.first ?? '',
+                          )
+                        : Image.asset(Assets.images.spacexLogo.path).image,
+                    onTap: () => _router.navigate(
+                      DragonDetailsRoute(dragon: items[index]),
+                    ),
+                  ),
                 );
               } else {
                 return Center(
-                  child: Text(S
-                      .of(context)
-                      .nothingToShow),
+                  child: Text(S.of(context).nothingToShow),
                 );
               }
             }
