@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:space_x_book/presentation/widget/card_list_item_widget.dart';
 import 'package:space_x_book/routing/index.dart';
@@ -6,6 +7,7 @@ import '../../gen/assets.gen.dart';
 import '../../generated/l10n.dart';
 import '../../injection_container.dart';
 
+@RoutePage()
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:space_x_book/generated/l10n.dart';
@@ -6,6 +7,7 @@ import 'package:space_x_book/presentation/highlights_page/highlight_list_item.da
 
 import 'index.dart';
 
+@RoutePage()
 class HighlightsPage extends StatefulWidget {
   @override
   State<HighlightsPage> createState() => _HighlightsPageState();
@@ -39,13 +41,19 @@ class _HighlightsPageState extends State<HighlightsPage> {
               );
             } else {
               final items = state.items;
-              if (items != null && (items.isNotEmpty )) {
-                return ListView.builder(
-                  itemCount: state.items?.length ?? 0,
-                  itemBuilder: (BuildContext context, int index) =>
-                      HighlightListItem(
-                    item: items[index],
-                  ),
+              if (items != null && (items.isNotEmpty)) {
+                return CustomScrollView(
+                  slivers: [
+                    SliverList(
+                      delegate: SliverChildListDelegate(
+                        items
+                            .map(
+                              (e) => HighlightListItem(item: e),
+                            )
+                            .toList(),
+                      ),
+                    ),
+                  ],
                 );
               } else {
                 return Center(

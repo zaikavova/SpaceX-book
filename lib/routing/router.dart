@@ -1,17 +1,17 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:space_x_book/domain/index.dart';
-import 'package:space_x_book/presentation/index.dart';
 
 part 'router.gr.dart';
 
-@MaterialAutoRouter(
+@AutoRouterConfig(
   replaceInRouteName: 'Page,Route',
-  routes: [
-    AutoRoute<dynamic>(page: MainPage),
-    AutoRoute<dynamic>(page: DragonsPage),
-    AutoRoute<dynamic>(page: HighlightsPage),
-    AutoRoute<dynamic>(page: DragonDetailsPage),
-  ],
+  generateForDir: ['lib/presentation'],
 )
-class AppRouter extends _$AppRouter {}
+class AppRouter extends _$AppRouter {
+  @override
+  List<AutoRoute> get routes => [
+        AutoRoute(page: MainRoute.page),
+        AutoRoute(page: DragonsRoute.page),
+        AutoRoute(page: HighlightsRoute.page),
+        AutoRoute(page: DragonDetailsRoute.page),
+      ];
+}
