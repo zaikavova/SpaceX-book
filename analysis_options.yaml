@@ -5,7 +5,7 @@ analyzer:
   errors:
     missing_required_param: warning
     missing_return: error
-  exclude: ['**.gr.dart','**.chopper.dart','lib/generated/', '**.g.dart']
+  exclude: ['**.gr.dart','**.chopper.dart','lib/generated/**', '**.g.dart']
   plugins:
     - dart_code_metrics
 
